@@ -13,8 +13,6 @@ RUN apt-get update \
 
 COPY . .
 
-RUN npm install
-
 EXPOSE 3000
 
 CMD ["dockerize", "-wait", "tcp://mysql:3306", "-timeout", "60m", "npm", "start"]
